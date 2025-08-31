@@ -8,13 +8,12 @@ on:
     branches:
       - '*'
 
-jobs:
-  build-jupyterlite:
+jobs: 
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -32,18 +31,7 @@ jobs:
           echo "ls"
           ls
           echo "ls _site"
-          ls _site
-      # - name: Upload artifact
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     name: jupyterlite
-      #     path: ./jupyterlite/dist
-
-  render-quarto:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
+          ls _site    
       - name: Setup quarto
         uses: quarto-dev/quarto-actions/setup@v2
       - run: |
@@ -65,32 +53,21 @@ jobs:
           ls
           echo "ls _site"
           ls _site
-      # - name: Upload artifact
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     name: slides
-      #     path: ./slides/output
-  
-  upload-artifact:
-    needs: [build-jupyterlite, render-quarto]
-    runs-on: ubuntu-latest
-    steps:
-    - name: Any Name Bash Test Step
-      shell: bash
-      run: |
-        echo "pwd"
-        pwd
-        echo "ls"
-        ls
-        echo "ls _site"
-        ls _site
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: _site
-
+      - name: Any Name Bash Test Step
+        shell: bash
+        run: |
+          echo "pwd"
+          pwd
+          echo "ls"
+          ls
+          echo "ls _site"
+          ls _site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
   deploy:
-    needs: upload-artifact
+    needs: build
     if: github.ref == 'refs/heads/main'
     permissions:
       pages: write
