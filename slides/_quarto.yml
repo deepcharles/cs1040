@@ -1,3 +1,5 @@
+project:
+  output-dir: output
 format:
   live-revealjs:
       theme: [default, _extensions\grantmcdermott\clean\clean.scss]
