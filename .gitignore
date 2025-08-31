@@ -114,3 +114,7 @@ dmypy.json
 # jupyterlite
 *.doit.db
 _output
+slides/.quarto/
+slides/_extensions/coatless-quarto
+slides/output/
+slides/_extensions/r-wasm/
