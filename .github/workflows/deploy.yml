@@ -26,11 +26,12 @@ jobs:
         run: |
           cd jupyterlite
           jupyter lite build --contents content --output-dir dist
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          name: jupyterlite
-          path: ./jupyterlite/dist
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     name: jupyterlite
+      #     path: ./jupyterlite/dist
+      
   render-quarto:
     runs-on: ubuntu-latest
     steps:
@@ -49,14 +50,25 @@ jobs:
         with:
           to: html # If set, it will be equivalent to `quarto render --to html`
           path: slides # By default, the current working dir is used i.e `quarto render .`
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          name: slides
-          path: ./slides/output
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     name: slides
+      #     path: ./slides/output
+  
+  upload-artifact:
+    needs: [build-jupyterlite, render-quarto]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: |
+          ./slides/output
+          ./jupyterlite/dist
 
   deploy:
-    needs: [build-jupyterlite, render-quarto]
+    needs: upload-artifact
     if: github.ref == 'refs/heads/main'
     permissions:
       pages: write
