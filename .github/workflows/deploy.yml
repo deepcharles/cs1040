@@ -35,8 +35,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
-      - name: Setup quarto
-        uses: quarto-dev/quarto-actions/setup@v2
+      # - name: Setup quarto
+      - uses: quarto-dev/quarto-actions/setup@v2
       - run: |
           quarto add r-wasm/quarto-live --no-prompt
           quarto add coatless-quarto/pyodide --no-prompt
