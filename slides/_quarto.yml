@@ -1,5 +1,5 @@
 project:
-  output-dir: ../_site
+  output-dir: ../_site/slides
 format:
   live-revealjs:
       theme: [default, _extensions\grantmcdermott\clean\clean.scss]

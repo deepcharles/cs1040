@@ -24,7 +24,7 @@ jobs:
       - name: Build the JupyterLite site
         run: |
           cd jupyterlite
-          jupyter lite build --contents content --output-dir ../_site
+          jupyter lite build --contents content --output-dir ../_site/jupyterlite
           cd ..
           echo "pwd"
           pwd
