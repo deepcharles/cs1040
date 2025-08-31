@@ -39,9 +39,10 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
       - run: |
           quarto --version
+          cd slides
           quarto add r-wasm/quarto-live --no-prompt
           quarto add coatless-quarto/pyodide --no-prompt
-          quarto install extension grantmcdermott/quarto-revealjs-clean --no-prompt
+          cd ..
       - name: Render quarto slides
         uses: quarto-dev/quarto-actions/render@v2
         with:
