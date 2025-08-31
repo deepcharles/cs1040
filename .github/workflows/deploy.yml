@@ -25,7 +25,7 @@ jobs:
       - name: Build the JupyterLite site
         run: |
           cd jupyterlite
-          jupyter lite build --contents content --output-dir dist
+          jupyter lite build --contents content --output-dir ../_site
       # - name: Upload artifact
       #   uses: actions/upload-pages-artifact@v3
       #   with:
@@ -63,9 +63,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v4
       with:
-        path: |
-          ./slides/output
-          ./jupyterlite/dist
+        path: _site
 
   deploy:
     needs: upload-artifact
