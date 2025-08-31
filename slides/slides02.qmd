@@ -1,0 +1,16 @@
+---
+title: Intro to Computer Science (CS1040) - Week 1 Lecture 2
+date: last-modified
+---
+
+## Objectives
+
+&emsp; Strings<br>
+&emsp; Built-in types<br>
+
+
+## Strings
+
+## Types
+
+# Appendix {background-color="#3c74ce"}

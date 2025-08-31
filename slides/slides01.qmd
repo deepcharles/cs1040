@@ -1,0 +1,356 @@
+---
+title: Intro to Computer Science (CS1040) - Lecture 1
+date: 2025-09-01
+---
+
+## Who am I?
+
+## This week
+
+&emsp; 📝 Course info  
+
+&emsp; 🖥️ Computers and algorithms  
+
+&emsp; 🐍 First Python program  
+
+&emsp; ➕ Arithmetic operations  
+
+&emsp; 🧮 Variables
+
+
+
+# Course info {background-color="#3c74ce"}
+
+## Grading
+
+&emsp; Assignments 33%
+
+&emsp; Midterm 33%
+
+&emsp; Final Examination 33%
+
+
+## In the classroom
+
+&emsp; 💻 Bring computers to answer in-class practice exercises!  
+
+&emsp; 📂 Slides and code files up before each lecture
+
+&emsp; 📝 Take notes and run the same code I do  
+
+&emsp; 🐣 New to programming? PRACTICE. PRACTICE! PRACTICE!!  
+
+&emsp; 🚫📖 Can't passively learn programming  
+
+&emsp; 🧪🐍 Don't be afraid to try out Python commands!
+
+
+## Course policies
+
+&emsp; Assigments can be done in pairs  
+
+&emsp; Use of LLMs is OK, except when it's not (specified)  
+
+
+## Learning outcomes
+
+&emsp; 📚 Knowledge of key concepts  
+&emsp; &emsp; Read and discuss technical subjects  
+
+&emsp; 💻 Programming skills  
+&emsp; &emsp; Write programs  
+
+&emsp; 🧠 Problem solving  
+&emsp; &emsp; Break down problems into solvable, bite-sized tasks
+
+## Office hours
+
+&emsp; Usually free before and after class  
+
+&emsp; To make sure, make an appointment  
+
+
+
+# Computer programming {background-color="#3c74ce"}
+
+## What does a computer do
+
+&emsp; Performs high-speed ⚡ calculations, measured in flops (ops per sec)   
+&emsp; &emsp; iPhone 15 Pro: $\approx 10^{12}$ flops  
+&emsp; &emsp; Fastest supercomputers: $\approx 10^{18}$ flops  
+
+&emsp; Stores and retrieves data 💾  
+&emsp; &emsp; A short video: $\approx 10^{6}$ bytes  
+&emsp; &emsp; A month of internet traffic: $\approx 10^{18}$ bytes  
+
+&emsp; Computers only do what you tell them 🧑‍💻 but use the proper language
+
+## What’s an algorithm
+
+&emsp; 1. A sequence of simple steps  
+&emsp; 2. A control flow to manage which step to execute  
+&emsp; 3. A stopping condition  
+
+
+## Simple example
+
+&emsp; Worth of an investment of 10k\$ after 3 years at 5% interest rate?  
+&emsp; Compute the value for simple and compounded rates  
+
+```{pyodide-python}
+```
+
+
+## Breaking down the code
+
+```{.python code-line-numbers="1|2|3|4|5|9|10-12|13"}
+principal = 10000
+rate = 5 / 100
+simple = False
+compounded = True
+if simple:
+    investment_value_after_1yr = principal*(1+rate)
+    investment_value_after_2yr = investment_value_after_1yr + principal*rate
+    investment_value_after_3yr = investment_value_after_2yr + principal*rate
+if compounded:
+    investment_value_after_1yr = principal*(1+rate)
+    investment_value_after_2yr = investment_value_after_1yr*(1+rate)
+    investment_value_after_3yr = investment_value_after_2yr*(1+rate)
+print(investment_value_after_3yr)
+```
+
+## A computer programm
+
+&emsp; Set of instructions stored inside computer  
+&emsp; Built with predefined primitive instructions (arithmetic, moving data, etc.)  
+
+&emsp; A special program translates instructions to machine-readable language  
+&emsp; Programmers say: "the interpreter compiles the program"
+
+## Programming languages (1)
+
+&emsp; A programming language is a set of readable shorthands  
+&emsp; To primitive operations and more...
+
+&emsp; Common languages are equivalent  
+&emsp; But some are more suited to certain tasks  
+
+
+## Programming languages (2)
+
+&emsp; Syntax is important!  
+&emsp;&emsp; In English: "cat dog boy", not valid, but "cat hugs boy" is valid  
+&emsp;&emsp; In Python: "hi"5, not valid, but "3.2*5" is valid
+
+&emsp; Contrary to natural languages, statements have only one meaning  
+&emsp; But may not be what programmer intended  
+&emsp;&emsp; program crashes  
+&emsp;&emsp; program runs forever  
+&emsp;&emsp; program gives a surprising answer
+
+## Meet Python!
+
+:::: {.columns}
+
+::: {.column width="50%"}
+&emsp; Python is interpreted  
+&emsp; Easy to learn  
+&emsp; Used by many communities  
+
+&emsp; 1991 Python 0.9.0  
+&emsp; 2000 Python 2.0  
+&emsp; 2008 Python 3.0
+:::
+
+::: {.column width="50%"}
+
+<a href="https://www.statista.com/chart/16567/popular-programming-languages/" title="Infographic: The Most Popular Programming Languages | Statista"><img src="https://cdn.statcdn.com/Infographic/images/normal/16567.jpeg" alt="Infographic: The Most Popular Programming Languages | Statista" width="90%" height="auto" style="width: 90%; height: auto !important; max-width:960px;-ms-interpolation-mode: bicubic;"/></a>
+:::
+
+::::
+
+# Let's code {background-color="#3c74ce"}
+
+## Hello, World! {#sec-hello-world}
+
+&emsp;Execute the following statement
+<br>
+```{pyodide-python}
+print("Hello, World!")
+```
+
+&emsp;Try single quotes `' '` instead of double quotes `" "`<br>
+&emsp; Try without quotes<br>
+&emsp; Try `print("Hello,","World!")`<br>
+&emsp; Try another (natural) language  [[See this table]{.button}](#sec-app-hello-world)
+
+
+&emsp; See [here](https://akkologlu.medium.com/hello-world-the-story-of-the-legendary-first-step-in-programming-bb06a623f7f7) the story behind `Hello, World!` 
+
+## Arithmetic {#sec-arithmetic}
+
+&emsp; Python is a calculator<br>
+&emsp; Evaluate $2 + 3$, $6 – 2$, $8 \div 2$, $19\times 34$, $2^8$ &emsp; [[See this table]{.button}](#sec-app-arithmetic)<br>
+
+```{pyodide-python}
+2+3,6-2,...
+```
+
+## Variable assignment
+
+&emsp; A variable is a memory location to store data<br>
+&emsp; To assign is to create; use the `=` sign<br>
+```{pyodide-python}
+x = 10
+print(x)
+print("The value of x is ", x)
+```
+
+## Quick exercise 1
+
+&emsp; 1. Store the number 5 in a variable called "first_number".<br>
+&emsp; 2. Store 11 in a "second_number" variable.<br>
+&emsp; 3. Assign the sum of both variables to a "result" variable.<br>
+&emsp; 4. Display "result".<br>
+&emsp; 5. Display "result" times 2.<br>
+
+```{pyodide-python}
+...
+```
+
+## Quick exercise 2 {.scrollable}
+
+&emsp; Execute the following code. What happens? Why?
+
+```{pyodide-python}
+first_name = "Shahrukh"
+last_name = "Khan"
+print("First name is", first_nmae)
+print("Last name is", last_name)
+```
+
+## Learning ressources
+
+&emsp; Web tutorial: [Python For Beginners](https://www.python.org/about/gettingstarted/)  
+
+&emsp; Course: [Introduction to Computer Science and Programming in Python at MIT](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/)  
+
+&emsp; [Introductory books](https://wiki.python.org/moin/IntroductoryBooks)  
+
+&emsp; Book: [Introduction to Computation and Programming Using Python](https://mitpress.mit.edu/9780262542364/introduction-to-computation-and-programming-using-python/)  
+
+&emsp; Videos: [Python in 3 hours - Python for Absolute Beginners](https://www.youtube.com/watch?v=OCCWZheOesI) and [Python Programming Full Course: Beginner to Intermediate](https://www.youtube.com/watch?v=ByXRKZtW0lw)
+
+
+# Appendix {background-color="#3c74ce"}
+
+## Variables in plain English
+
+<iframe src="http://proxy.aup.fr/login?url=https://video.alexanderstreet.com/embed/variables-in-plain-english?account_id=40507&usage_group_id=57947" width="100%" height="50%" frameborder="0" allow="encrypted-media *; autoplay *; fullscreen *" allowfullscreen></iframe>
+
+## Margaret Hamilton
+
+&emsp; [Short bio](https://academic-eb-com.proxy.aup.fr/levels/collegiate/article/Margaret-Hamilton/630128)  
+
+&emsp; [MH Led the NASA Software Team That Landed Astronauts on the Moon](https://www.smithsonianmag.com/smithsonian-institution/margaret-hamilton-led-nasa-software-team-landed-astronauts-moon-180971575/)
+
+
+## Hello, World! in different languages {#sec-app-hello-world .scrollable}
+
+&emsp; [[Back to main]{.button}](#sec-hello-world)<br>
+&emsp; Source: [stackexchange](https://codegolf.stackexchange.com/questions/146544/hello-world-in-multiple-languages)<br>
+
+::: {#tbl-hello-world}
+
+| Language       | Hello World Translation                |
+|----------------|----------------------------------------|
+| Afrikaans      | Hello Wêreld!                          |
+| Albanian       | Përshendetje Botë!                     |
+| Amharic        | ሰላም ልዑል!                              |
+| Arabic         | مرحبا بالعالم!                        |
+| Armenian       | Բարեւ աշխարհ!                          |
+| Basque         | Kaixo Mundua!                          |
+| Belarussian    | Прывітанне Сусвет!                     |
+| Bengali        | ওহে বিশ্ব!                               |
+| Bulgarian      | Здравей свят!                          |
+| Catalan        | Hola món!                              |
+| Chichewa       | Moni Dziko Lapansi!                    |
+| Chinese        | 你好世界！                              |
+| Croatian       | Pozdrav svijete!                       |
+| Czech          | Ahoj světe!                            |
+| Danish         | Hej Verden!                            |
+| Dutch          | Hallo Wereld!                          |
+| English        | Hello World!                           |
+| Estonian       | Tere maailm!                           |
+| Finnish        | Hei maailma!                           |
+| French         | Bonjour monde!                         |
+| Frisian        | Hallo wrâld!                           |
+| Georgian       | გამარჯობა მსოფლიო!                    |
+| German         | Hallo Welt!                            |
+| Greek          | Γειά σου Κόσμε!                        |
+| Hausa          | Sannu Duniya!                          |
+| Hebrew         | שלום עולם!                            |
+| Hindi          | नमस्ते दुनिया!                            |
+| Hungarian      | Helló Világ!                           |
+| Icelandic      | Halló heimur!                          |
+| Igbo           | Ndewo Ụwa!                             |
+| Indonesian     | Halo Dunia!                            |
+| Italian        | Ciao mondo!                            |
+| Japanese       | こんにちは世界！                         |
+| Kazakh         | Сәлем Әлем!                            |
+| Khmer          | សួស្តី​ពិភពលោក!                          |
+| Kyrgyz         | Салам дүйнө!                           |
+| Lao            | ສະ​ບາຍ​ດີ​ຊາວ​ໂລກ!                          |
+| Latvian        | Sveika pasaule!                        |
+| Lithuanian     | Labas pasauli!                         |
+| Luxemburgish   | Moien Welt!                            |
+| Macedonian     | Здраво свету!                          |
+| Malay          | Hai dunia!                             |
+| Malayalam      | ഹലോ വേൾഡ്!                       |
+| Mongolian      | Сайн уу дэлхий!                        |
+| Myanmar        | မင်္ဂလာပါကမ္ဘာလောက!                      |
+| Nepali         | नमस्कार संसार!                           |
+| Norwegian      | Hei Verden!                            |
+| Pashto         | سلام نړی!                              |
+| Persian        | سلام دنیا!                             |
+| Polish         | Witaj świecie!                         |
+| Portuguese     | Olá Mundo!                             |
+| Punjabi        | ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਦੁਨਿਆ!                     |
+| Romanian       | Salut Lume!                            |
+| Russian        | Привет мир!                            |
+| Scots Gaelic   | Hàlo a Shaoghail!                      |
+| Serbian        | Здраво Свете!                          |
+| Sesotho        | Lefatše Lumela!                        |
+| Sinhala        | හෙලෝ වර්ල්ඩ්!                         |
+| Slovenian      | Pozdravljen svet!                      |
+| Spanish        | ¡Hola Mundo!                           |
+| Sundanese      | Halo Dunya!                            |
+| Swahili        | Salamu Dunia!                          |
+| Swedish        | Hej världen!                           |
+| Tajik          | Салом Ҷаҳон!                           |
+| Thai           | สวัสดีชาวโลก!                            |
+| Turkish        | Selam Dünya!                           |
+| Ukrainian      | Привіт Світ!                           |
+| Uzbek          | Salom Dunyo!                           |
+| Vietnamese     | Chào thế giới!                         |
+| Welsh          | Helo Byd!                              |
+| Xhosa          | Molo Lizwe!                            |
+| Yiddish        | העלא וועלט!                           |
+| Yoruba         | Mo ki O Ile Aiye!                      |
+| Zulu           | Sawubona Mhlaba!                       |
+:::
+
+
+## Arithmetic operators {#sec-app-arithmetic}
+
+&emsp; [[Back to main]{.button}](#sec-arithmetic)
+
+| Operator | Symbol | Description                          | Example         | Result |
+|----------|--------|--------------------------------------|-----------------|--------|
+| Addition | `+`    | Adds two operands                    | `3 + 2`         | `5`    |
+| Subtraction | `-` | Subtracts right operand from left    | `5 - 3`         | `2`    |
+| Multiplication | `*` | Multiplies two operands           | `4 * 2`         | `8`    |
+| Division | `/`    | Divides left operand by right       | `10 / 2`        | `5.0`  |
+| Floor Division | `//` | Divides and returns integer part | `10 // 3`       | `3`    |
+| Modulus | `%`     | Returns remainder of division       | `10 % 3`        | `1`    |
+| Exponentiation | `**` | Raises left operand to power of right | `2 ** 3`   | `8`    |

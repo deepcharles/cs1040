@@ -1,0 +1,20 @@
+format:
+  live-revealjs:
+      theme: [default, _extensions\grantmcdermott\clean\clean.scss]
+      menu: false
+        # side: left
+      slide-number: true
+      date-format: long
+      logo: assets\AUPlogo_1line_whiteBG_small_digital.png
+      smaller: false
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: Charles Truong
+    url: https://charles.doffy.net/
+    email: ctruong@aup.edu
+filters:
+  - pyodide
+pyodide:
+  show-startup-message: false
